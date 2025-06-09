@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/exercise1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <div class="header" style="background-color: white;">  
+        <div class="options">
+            <div id="id1"><a href="/">Home</a></div>
+            <div id="id1"><a href="">About Us</a></div>
+            <div id="id1"><a href="">Services</a></div>
+            <div id="id1"><a href="/contact" >Contact</a></div>
+        </div>
+       
+        <div class="end">
+            <div id="id1"><a href="">Meal Plans</a></div>
+            <div id="id1"><a href="/bmi"><button>Calculate BMI</button></a></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Exercise Page</h1>
+        
+        <!-- Upper Body Section -->
+        <h2>Upper Body</h2>
+        <div class="exercise-buttons">
+            <button id="bicep_curl_right_button">1. Bicep Curls - Right Arm</button>
+            <button id="bicep_curl_left_button">2. Bicep Curls - Left Arm</button>
+            <button id="shoulder_press_button">3. Shoulder Press</button>
+            <button id="push_up_button">4. Push Up</button>
+        </div>
+        
+        <!-- Lower Body Section -->
+        <h2>Lower Body</h2>
+        <div class="exercise-buttons">
+            <button id="squats_button">5. Squats</button>
+            <button id="lunges_button">6. Lunges - Left Leg</button>
+            <button id="lunges_button">7. Lunges - Right Leg</button>
+        </div>
+
+        <!-- Full Body Section -->
+        <h2>Full Body</h2>
+        <div class="exercise-buttons">
+            <button id="jumping_jack_button">8. Jumping Jack</button>
+            <button id="high_knees_button">9. High Knees</button>
+        </div>
+
+        <!-- Abs Section -->
+        <h2>Abs</h2>
+        <div class="exercise-buttons">
+            <button id="situps_button">10. Situps</button>
+            <button id="plank_button">11. Up and Down Plank</button>
+            <button id="frog_press_button">12. Frog Press</button>
+        </div>
+        <div class="exercise-buttons">
+            <button id="exit_button">EXIT</button>
+        </div>
+        
+
+        <div id="video-container">
+            <img id="video-stream" src="" alt="Video Stream">
+        </div>
+
+        <div class="youtube-link" id="youtube-link">
+            <!-- YouTube links will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+const videoStream = document.getElementById('video-stream');
+const youtubeLinkDiv = document.getElementById('youtube-link');
+
+const exerciseLinks = {
+    1: "https://youtu.be/sYV-ki-1blM?si=mdmUKJwew142S-ev",  // Example link for Bicep Curl (Right)
+    2: "https://youtu.be/sYV-ki-1blM?si=mdmUKJwew142S-ev",  // Example link for Bicep Curl (Left)
+    3: "https://youtu.be/rO_iEImwHyo?si=xTGgDP5obdA7wNAk",
+    4: "https://youtu.be/zkU6Ok44_CI?si=7SaRDz5pyNAzpblk",
+    5: "https://youtu.be/a6Na67zUMZk?si=7scdw8AvY3CcKGfG",
+    6: "https://youtu.be/mBhqeQm8RdM?si=XippCaA6DiNT7dDk",
+    7: "https://youtu.be/mBhqeQm8RdM?si=XippCaA6DiNT7dDk",
+    8: "https://youtu.be/VQRymnr0wTo?si=mVWNVdcQMUEWm6gW",
+    9: "https://youtu.be/FvjmPRU3zn4?si=sabf6uFf2aSYf42q",
+    10: "https://youtu.be/pCX65Mtc_Kk?si=LksfIp1znDYaeioi",
+    11: "https://youtu.be/kL_NJAkCQBg?si=Um3z3H72DnSZZk8B",
+    12: "https://youtu.be/ToTUkX3am4w?si=N4UPIYNHVQGu740Q"
+};
+
+// Event listeners for each button to update the video stream and YouTube link
+document.getElementById('bicep_curl_right_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=1";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[1]}" target="_blank">Watch Bicep Curls - Right Arm</a>`;
+});
+
+document.getElementById('bicep_curl_left_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=2";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[2]}" target="_blank">Watch Bicep Curls - Left Arm</a>`;
+});
+
+document.getElementById('shoulder_press_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=3";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[3]}" target="_blank">Watch Shoulder Press</a>`;
+});
+
+document.getElementById('push_up_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=4";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[4]}" target="_blank">Watch Push Up</a>`;
+});
+
+document.getElementById('squats_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=5";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[5]}" target="_blank">Watch Squats</a>`;
+});
+
+document.getElementById('lunges_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=6";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[6]}" target="_blank">Watch Lunges</a>`;
+});
+document.getElementById('lunges_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=7";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[7]}" target="_blank">Watch Lunges</a>`;
+});
+
+document.getElementById('jumping_jack_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=8";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[8]}" target="_blank">Watch Jumping Jack</a>`;
+});
+
+document.getElementById('high_knees_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=9";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[9]}" target="_blank">Watch High Knees</a>`;
+});
+
+document.getElementById('situps_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=10";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[10]}" target="_blank">Watch Situps</a>`;
+});
+
+document.getElementById('plank_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=11";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[11]}" target="_blank">Watch Plank</a>`;
+});
+
+document.getElementById('frog_press_button').addEventListener('click', function() {
+    videoStream.src = "/start_exercise?type=12";
+    youtubeLinkDiv.innerHTML = `<a href="${exerciseLinks[12]}" target="_blank">Watch Frog Press</a>`;
+});
+
+document.getElementById('exit_button').addEventListener('click', function() {
+    videoStream.src = "";
+    youtubeLinkDiv.innerHTML = "";  // Clear YouTube link
+});
+    </script>
+</body>
+</html>

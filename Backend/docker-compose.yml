@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  fitness-app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - ./audiofiles:/app/audiofiles  # Mount audio files
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    restart: unless-stopped
